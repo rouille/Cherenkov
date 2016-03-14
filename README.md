@@ -7,7 +7,7 @@ to the EAS axis.
 ### INSTALLATION NOTES
 (Benjamin Rouillé d'Orfeuil - August 31st, 2011)
 
-The code nelies on ROOT. Please install the full distribution from https://root.cern.ch/.
+The code relies on ROOT. Please install the full distribution from https://root.cern.ch/.
 
 Then, simply type:
 > make
