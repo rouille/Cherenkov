@@ -7,5 +7,10 @@ This includes the modeling of the EAS and the number of Cherenkov photons produc
 to the EAS axis.
 
 Installation Notes
-Benjamin Rouillé d'Orfeuil, August 31st, 2011
+(Benjamin Rouillé d'Orfeuil - August 31st, 2011)
+
+These codes need some ROOT's libraries. Please install the full distribution from https://root.cern.ch/.
+
+Then, simply type:
+> make
 
