@@ -14,3 +14,4 @@ These codes need some ROOT's libraries. Please install the full distribution fro
 Then, simply type:
 > make
 
+We joined some exe all called example_*.exe to show what can be done. These files enclose a synopsis and are documented.
