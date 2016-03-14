@@ -1,9 +1,7 @@
-# Cherenkov
+# Cherenkov Signal produced by extensive air showers
 Benjamin Rouillé d'Orfeuil
 
-This is a full Monte-Carlo to characterize the Cherenkov signal produced by extensive air showers (EAS) at ground.
-
-This includes the modeling of the EAS and the number of Cherenkov photons produced per interval of slant depth and angle with respect 
+This is a full Monte-Carlo to characterize the Cherenkov signal produced by extensive air showers (EAS) at ground. This includes the modeling of the EAS and the number of Cherenkov photons produced per interval of slant depth and angle with respect 
 to the EAS axis.
 
 ### INSTALLATION NOTES
