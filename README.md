@@ -9,4 +9,4 @@ The code relies on ROOT. Please install the full distribution from https://root.
 Then, simply type:
 > make
 
-Executables (example_*.cc) illustrating what can be done. These files enclose a synopsis and are thoroughly documented.
+Executables (`example_*.exe`) illustrating what can be done are available. These files enclose a synopsis and are thoroughly documented.
