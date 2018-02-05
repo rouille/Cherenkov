@@ -37,7 +37,7 @@ void Usage(string myName)
 
   cout << " Description :" << endl;
   cout << myName << " generates a shower produced by a cosmic ray of energy <log(energy/[eV])> and incoming"
-       << " direction <zenith angle> and <azimuth angle> and plots the total number of Cherenkovphotons"
+       << " direction <zenith angle> and <azimuth angle> and plots the total number of Cherenkov photons"
        << " produced and the normalize angular distribution with respect to the shower axis." << endl;
 
   cout << endl;
@@ -65,9 +65,9 @@ int main(int argc, char* argv[])
   // Wavelength range for Cherenkov photons produced (in cm)
   double WaveMin = 300e-7, WaveMax = 400e-7;
 
-  /* Let's go */ 
+  /* Let's go */
   unsigned int NumberOfShower = 20;
-  
+
   vector<vector<double> > Nc(NumberOfShower);
   vector<double> angle;
   vector<vector<double> > AngularDistribution;
@@ -86,7 +86,7 @@ int main(int argc, char* argv[])
       Nc[i].resize(T_tmp.size());
       for(unsigned j = 0; j < T_tmp.size(); j++) Nc[i][j] = Nc_tmp[j];
     }
-  
+
   // Total number of Cherenkov photons produced
   TCanvas * cCherenkov = new TCanvas(GetObjName(),"Cherenkov",600,600);
   for(unsigned int i = 0; i < NumberOfShower; i++)
@@ -174,7 +174,7 @@ int main(int argc, char* argv[])
       cAngularDistribution->Update();
     }
 
-  cAngularDistribution->SaveAs("angle.pdf"); 
+  cAngularDistribution->SaveAs("angle.pdf");
 
   cout << "Program Finished Normally" << endl;
 }

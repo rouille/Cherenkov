@@ -14,7 +14,6 @@
 #include <TStyle.h>
 #include <TGraphErrors.h>
 
-
 static char gObjName[1024];
 static int gObjNumber = 0;
 static char * GetObjName() {sprintf(gObjName,"Shower %d",gObjNumber++); return gObjName;}
@@ -52,14 +51,14 @@ int main(int argc, char* argv[])
   gROOT->SetStyle("Plain");
   gStyle->SetTitleFont(30,"TITLE");
 
-  // Generate shower 
+  // Generate shower
   unsigned int NumberOfShower = 100000;
   unsigned int keep = 100;
 
   TCanvas * cFirstInteraction = new TCanvas(GetObjName(),"First Interaction",600,600);
   TH1F * hFirstInteraction = new TH1F(GetObjName(),"",50,0,40);
   hFirstInteraction->SetStats(0);
- 
+
   vector< vector<double> > Ne_MC(keep);
   vector<double> T_MC;
 
@@ -68,7 +67,7 @@ int main(int argc, char* argv[])
       TShower * Shower = new TShower(energy,coord);
       double altitude = depth2altitude(Shower->GetT1()*X0);
       hFirstInteraction->Fill(altitude);
-      
+
       if( i < keep )
         {
           vector<double> T_tmp, Ne_tmp;
@@ -84,18 +83,18 @@ int main(int argc, char* argv[])
   SetPlotAttributes(hFirstInteraction,"","Altitude of first interaction [km]");
   hFirstInteraction->Draw("");
   cFirstInteraction->Update();
-  
+
   cFirstInteraction->SaveAs("X1.pdf");
 
-  // Longitudinal profile 
+  // Longitudinal profile
   TCanvas * cShower = new TCanvas(GetObjName(),"Shower",600,600);
-  
+
   /* Individual showers */
   for(unsigned int i = 0; i < keep; i++)
     {
       TGraphErrors * gShower = new TGraphErrors(T_MC.size());
       for(unsigned int j = 0; j < T_MC.size(); j++) gShower->SetPoint(j,T_MC[j],log10(Ne_MC[i][j]));
-      if( i == 0 ) 
+      if( i == 0 )
         {
           SetPlotAttributes(gShower,0,40,"","t","N_{e}");
           gShower->GetYaxis()->SetRangeUser(0.,log10(energy)-8);

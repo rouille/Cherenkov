@@ -31,8 +31,8 @@ void Usage(string myName)
   cout << myName << endl << endl;
 
   cout << " Description :" << endl;
-  cout << myName << " repoduces Fig. 7 in Nerling et al. (2006) i.e plots the electron energy spectrum for the three shower ages"
-                 << " s = 0.8, 1.0 and 1.2." << endl; 
+  cout << myName << " repoduces Fig. 7 in Nerling et al. (2006) i.e plots the electron energy "
+                 << " spectrum for the three shower ages s = 0.8, s = 1.0 and s = 1.2." << endl; 
 
   cout << endl;
   exit(0);
@@ -50,18 +50,18 @@ int main(int argc, char* argv[])
   unsigned int size = 100;
   vector<double> energy = Bins(size,1,10000,true);
   double age[3] = {0.8,1.0,1.2};
-  
+
   TCanvas * cSpectra = new TCanvas(GetObjName(),"Electron energy spectra",600,600);
   cSpectra->SetLogx();
 
   vector<double> spectrum_first = ElectronEnergySpectrum(energy,age[0]);
   TGraphErrors * gSpectrum_first = new TGraphErrors(size);
   for(unsigned int i = 0; i < size; i++) gSpectrum_first->SetPoint(i,energy[i],spectrum_first[i]);
-  
+
   vector<double> spectrum_second = ElectronEnergySpectrum(energy,age[1]);
   TGraphErrors * gSpectrum_second = new TGraphErrors(size);
   for(unsigned int i = 0; i < size; i++) gSpectrum_second->SetPoint(i,energy[i],spectrum_second[i]);
-  
+
   vector<double> spectrum_third = ElectronEnergySpectrum(energy,age[2]);
   TGraphErrors * gSpectrum_third = new TGraphErrors(size);
   for(unsigned int i = 0; i < size; i++) gSpectrum_third->SetPoint(i,energy[i],spectrum_third[i]);

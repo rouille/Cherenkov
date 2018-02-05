@@ -10,8 +10,6 @@
 #include <TRoot.h>
 #include <TStyle.h>
 
-
-
 static char gObjName[1024];
 static int gObjNumber = 0;
 static char * GetObjName() {sprintf(gObjName,"Atmosphere %d",gObjNumber++); return gObjName;}
@@ -75,7 +73,7 @@ int main(int argc, char* argv[])
   gDepth->SetLineWidth(2);
   gDepth->Draw("AL");
   cAtmosphere->Update();
- 
+
   /* altitude vs refractive index */
   cAtmosphere->cd(3);
   TGraphErrors * gDelta = new TGraphErrors(Atmosphere.size(),delta,altitude);
